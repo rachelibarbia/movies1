@@ -3,7 +3,7 @@ The program was written in python 3.9 using Sublime text editor on Mac.
 
 ```
 import csv
-from itertools import zip_longest
+from itertools import zip_longest         
 
 c1 =[]
 c2 = []
@@ -11,7 +11,7 @@ c3=[]
 d= [c1, c2,c3]
 
 
-with open ('movies_metadata_sample.csv','r') as f:
+with open ('movies_metadata_sample.csv','r') as f: #to open and read given csv file
 	reader = csv.reader(f,delimiter = ',')
 	next(reader)
 	for row in reader:
@@ -21,13 +21,13 @@ with open ('movies_metadata_sample.csv','r') as f:
 		zip(*c1)
 export_data= zip_longest(*d,fillvalue= '')
 
-with open('new_movie_list.csv','w',newline = '')as f:
+with open('new_movie_list.csv','w',newline = '')as f:        #creates new csv file 
   
-   write = csv.writer(f,delimiter=",")
+   write = csv.writer(f,delimiter=",")           
         
-   write.writerow(("Genres","Year","Count"))
+   write.writerow(("Genres","Year","Count"))      #creates header
 
-   write.writerows(export_data)
+   write.writerows(export_data)                       #exports selected data into new csv file
    ```
    The resulting output can be viewed below
    
